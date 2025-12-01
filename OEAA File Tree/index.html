@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OEAA - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--NAV BAR-->
+<header>
+<div class="topbar">
+<nav class="navbar">
+<a href="index.html"><img src="OEAALOGO.png" alt="OEAA LOGO" class="logo"></a>
+<a href="about.html">About Us</a>
+<a href="programs.html">Programs</a>
+<a href="donations.html">Donations</a>
+<a href="news.html">News</a>
+<a href="contact.html">Contact</a>
+<a href="login.html" class="login">login</a>
+</nav>
+</div>
+<!--Revolving news board-->
+<div class="full-page-center">
+  <h1><a href="News.html" class="headlinelink">Recent Updates</a></h1>
+    <section class="carousel">
+  <button class="prev">◀</button> <button class="next">▶</button>
+
+  <div class="carousel-track">
+    <img src="slidea.jpg" alt="Slide A" class="slide">
+    <img src="slideb.jpg" alt="Slide B" class="slide">
+    <img src="slidec.jpg" alt="Slide C" class="slide">
+    <img src="slided.png" alt="Slide D" class="slide">
+    <img src="slidee.jpg" alt="Slide E" class="slide">
+    <img src="slidef.jpg" alt="Slide F" class="slide">
+  </div>
+</div>
+</section>
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextButton = document.querySelector('.next');
+  const prevButton = document.querySelector('.prev');
+
+  let currentSlide = 0;
+
+  function updateSlidePosition() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
+  }
+
+  nextButton.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlidePosition();
+  });
+
+  prevButton.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlidePosition();
+  });
+</script>
+
+<!--Statement from the chairman-->
+<div class="empblurb">
+  <img src="Avil Madmaan.jpg" alt="Avil Madmaan" class="emppic">
+  <div class="emptext">
+    <h2>A statement from the desk of OEAA Chairman Avil Madmaan</h2>
+    <h3>Ladies and gentlemen</h3>
+    <p>Frankly, I’m appalled, absolutely disgusted by this so-called “analysis” from the Financial Post’s Meg Potkins about LNG tanker traffic “falling short of expectations,” as though the entire future of Canadian energy can be summed up by how many ships left the dock in a given month, and as though those of us who’ve dedicated our lives to the responsible, science-based, job-creating ART of hydrocarbon extraction are supposed to bow our heads in shame every time a journalist finds a new spreadsheet or “environmental disaster”; what they fail to mention, of course, is that expectations are a moving target, markets fluctuate, tides happen all the time, and ships sometimes wait their turn because logistics, supply chains, and even gods gift of physics still apply to tankers; yet here we are, reading another whiney piece thinly disguised as “reporting,” while activists sip 10 dollar lattes and nod smugly about how “the market has spoken,” when in fact the only thing that’s spoken is their complete lack of understanding of ramp-up phases, turbine commissioning, LNG spot pricing, and what it actually takes to build something of value in this country without tripping over red tape and egotistical self-righteousness; I mean honestly, if I had a dollar for every time an energy project was declared dead before it even shipped its first load, I’d fund a new pipeline myself, but no, instead we get headlines that make it sound like Canada’s energy future is hanging by a thread because the tanker count wasn’t sexy enough for page one well, excuse me for believing that progress doesn’t always happen on a journalist’s schedule. This is the thanks we get as Oil Executives for keeping the world spinning. I would link the article but I believe I am doing you all a favour by not.
+
+</p>
+  </div>
+</div>
+
+<!--Greeting plus lorax video-->
+<div class="textblock">
+  <h1>Our Mission</h1>
+<p>Our goal at OEAA is to promote the acceptance, understanding, and proliferation of Oil and Gas while fighting the financially, socially, and spiritually corrupt movement of so called "environmentalists" who seek to make our human environment worse for all.
+  To this end, we conduct outreach via workshops, programs, public conferences and philanthropy. For more information view past and present via <a href="Programs.html" class="headlinelink">programs</a> 
+</p>
+  <div class="center-video">
+    <iframe src="https://www.youtube.com/embed/BXlYuaycRbU" 
+            title="Loraxvid" allowfullscreen></iframe>
+  </div>
+</div>
+<!--Footer-->
+<div class="footer">
+    <p>This website is a form of political satire created for the COMP 101 class of 2025.
+        Any similarities to persons, organizations, or political parties is purely coincidental.
+        No Copyright - Oct 2025
+    </p>
+</div>
+
+</body>
+</html>
